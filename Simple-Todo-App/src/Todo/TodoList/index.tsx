@@ -1,9 +1,10 @@
 import { observer } from "mobx-react-lite";
 import TodoStore from "../../stores/TodoStore";
+import styles from "./TodoList.module.css";
 
 const TodoList = ({ todos }: { todos: TodoStore }) => {
   return (
-    <ul>
+    <ul className={styles["todo-list"]}>
       {todos.list.map((t) => (
         <li key={t.id}>{t.title}</li>
       ))}
