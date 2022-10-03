@@ -1,7 +1,24 @@
-import React from "react";
+import React, { ChangeEvent, useState } from "react";
+import TodoStore from "../../stores/TodoStore";
 
-const TodoInput = () => {
-  return <div></div>;
+const TodoInput = ({ todos }: { todos: TodoStore }) => {
+  const [newTodo, setNewTodo] = useState("");
+
+  const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setNewTodo(e.target.value);
+  };
+
+  const handleButtonClick = () => {
+    todos.add(newTodo);
+    setNewTodo("");
+  };
+
+  return (
+    <>
+      <input value={newTodo} onChange={handleInputChange} />
+      <button onClick={handleButtonClick}>Add Todo</button>
+    </>
+  );
 };
 
 export default TodoInput;
