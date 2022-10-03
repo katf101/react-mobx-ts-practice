@@ -1,7 +1,7 @@
 import React, { ChangeEvent, useState } from "react";
 import TodoStore from "../../stores/TodoStore";
 
-//
+// TodoStore 사용
 const TodoInput = ({ todos }: { todos: TodoStore }) => {
   const [newTodo, setNewTodo] = useState("");
 
