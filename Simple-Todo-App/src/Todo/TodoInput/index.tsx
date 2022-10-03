@@ -1,5 +1,6 @@
 import React, { ChangeEvent, useState } from "react";
 import TodoStore from "../../stores/TodoStore";
+import styles from "./TodoInput.module.css";
 
 // TodoStore 사용
 const TodoInput = ({ todos }: { todos: TodoStore }) => {
@@ -18,10 +19,10 @@ const TodoInput = ({ todos }: { todos: TodoStore }) => {
   };
 
   return (
-    <>
+    <div className={styles["todo-input-group"]}>
       <input value={newTodo} onChange={handleInputChange} />
       <button onClick={handleButtonClick}>Add Todo</button>
-    </>
+    </div>
   );
 };
 
