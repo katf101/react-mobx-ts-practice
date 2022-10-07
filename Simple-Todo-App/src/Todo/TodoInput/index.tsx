@@ -1,9 +1,12 @@
 import React, { ChangeEvent, FormEvent, useState } from "react";
+import { useStore } from "../../stores";
 import TodoStore from "../../stores/TodoStore";
 import styles from "./TodoInput.module.css";
 
 // TodoStore 사용
-const TodoInput = ({ todos }: { todos: TodoStore }) => {
+const TodoInput = () => {
+  const { todos } = useStore();
+
   const [newTodo, setNewTodo] = useState("");
 
   // ts: onchage를 사용할때 event(e)의 타입을 정할때는 ChangeEvent를
