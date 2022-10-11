@@ -1,4 +1,3 @@
-import exp from "constants";
 import { action, makeAutoObservable, makeObservable, observable } from "mobx";
 
 export interface Todo {
@@ -27,7 +26,6 @@ class TodoStore {
   constructor() {
     // 자동 관찰 가능
     // makeAutoObservable(this);
-
     //
   }
 
